@@ -25,7 +25,7 @@ void f_push(stack_t **head, unsigned int counter)
 			exit(EXIT_FAILURE); }}
 	else
 	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
-		fclose(bus_file.file_cheeck);
+		fclose(bus_file.file_check);
 		free(bus_file.information);
 		free_stack(*head);
 		exit(EXIT_FAILURE); }

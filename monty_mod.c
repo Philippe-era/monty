@@ -8,7 +8,7 @@
 void f_mod(stack_t **head, unsigned int counter)
 {
 	stack_t *head_point;
-	int length_line = 0, success = 0, help_node;
+	int length_line = 0, help_node;
 
 	head_point = *head;
 	while (head_point)

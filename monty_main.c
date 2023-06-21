@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	ssize_t get_input = 1;
 	stack_t *stack_heap = NULL;
 	unsigned int num_check = 0;
-	bus_t bus_file = {NULL, NULL, NULL, 0};
+	/* bus_t bus_file = {NULL, NULL, NULL, 0};*/
 
 	if (argc != 2)
 	{
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 		num_check++;
 		if (get_input > 0)
 		{
-			execute(info, &stack_heap, counter, file_two);
+			execute(info, &stack_heap, num_check, file_two);
 		}
 		free(info);
 	}

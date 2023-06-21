@@ -36,6 +36,6 @@ void f_div(stack_t **head, unsigned int counter)
 	help_node = head_point->next->n / head_point->n;
 	head_point->next->n = help_node;
 	*head = head_point->next;
-	free(h);
+	free(head_point);
 }
 
