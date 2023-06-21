@@ -8,7 +8,7 @@
 void f_div(stack_t **head, unsigned int counter)
 {
 	stack_t *head_point;
-	int length_line = 0, check = 2, help_node;
+	int length_line = 0, help_node;
 
 	head_point = *head;
 	while (head_point)
@@ -16,7 +16,7 @@ void f_div(stack_t **head, unsigned int counter)
 		head_point = head_point->next;
 		length_line++;
 	}
-	if (length_line < check)
+	if (length_line < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", counter);
 		fclose(bus_file.file_check);
