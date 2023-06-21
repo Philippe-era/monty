@@ -3,7 +3,7 @@
   *f_sub- Replacement of stuff
   *@head: Head stack first in line
   *@counter: Number of lines to be counted
-  *Return: Always 0 Success 
+  *Return: Always 0 Success
  */
 void f_sub(stack_t **head, unsigned int counter)
 {

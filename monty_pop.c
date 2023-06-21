@@ -3,7 +3,7 @@
  * f_pop – Top of stack will be printed
  * @head:  Head of stack to be displayed
  * @counter: line count of the counter
- * Return: Always Success 0 
+ * Return: Always Success 0
 */
 void f_pop(stack_t **head, unsigned int counter)
 {

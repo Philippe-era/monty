@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * f_pint – top of stack to be printed 
+ * f_pint – top of stack to be printed
  * @head: head stack to be printed firstly
  * @counter: number of lines to be counted
  * Return: Always Success 0

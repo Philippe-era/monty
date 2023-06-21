@@ -4,7 +4,7 @@
  * addqueue – tail of stack in check
  * @n: value to be evulaed
  * @head: stack of head
- * Return: Always success 0 
+ * Return: Always success 0
 */
 void addqueue(stack_t **head, int n)
 {
