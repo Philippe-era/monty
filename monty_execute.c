@@ -1,15 +1,15 @@
 #include "monty.h"
 /**
-* execute – code to be ran
-* @stack: number 1 on list
-* @counter: counts lines of the number
-* @file: file to be checked
-* @content: content to be analyzed
-* Return: Nothing as always
+* execute - The opcode will be executed you check
+* @stack: head of the stack
+* @counter: counts the linked vibes
+* @file: file that needs to be compiled
+* @content: counts the number of lines you check
+* Return: Always nothing returned
 */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
-	instruction_t array_check[] = {
+	instruction_t opst[] = {
 				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 				{"pop", f_pop},
 				{"swap", f_swap},
@@ -27,23 +27,23 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 				{"stack", f_stack},
 				{NULL, NULL}
 				};
-	unsigned int initial = 0;
-	char *operation;
+	unsigned int i = 0;
+	char *op;
 
-	operation = strtok(content, " \n\t");
-	if (operation && operation[0] == '#')
+	op = strtok(content, " \n\t");
+	if (op && op[0] == '#')
 		return (0);
 	bus_file.argue = strtok(NULL, " \n\t");
-	while (array_check[initial].opcode && operation)
+	while (opst[i].opcode && op)
 	{
-		if (strcmp(operation, array_check[initial].opcode) == 0)
-		{	array_check[initial].f(stack, counter);
+		if (strcmp(op, opst[i].opcode) == 0)
+		{	opst[i].f(stack, counter);
 			return (0);
 		}
-		initial++;
+		i++;
 	}
-	if (operation && array_check[initial].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, operation);
+	if (op && opst[i].opcode == NULL)
+	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
 		free_stack(*stack);

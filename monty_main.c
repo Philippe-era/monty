@@ -1,47 +1,46 @@
 #include "monty.h"
-
+bus_t bus = {NULL, NULL, NULL, 0};
 /**
-* main – code compiler
-* @argc: number of parameters
-* @argv: location of file
-* Return: Success
+* main - the monty interpreot to make it happens
+* @argc: argueeeees ments of parameter
+* @argv: the monty file to be created
+* Return: Succcess is = 0  you check
 */
 int main(int argc, char *argv[])
 {
-	char *info;
-	FILE *file_two;
-	size_t size_check = 0;
-	ssize_t get_input = 1;
-	stack_t *stack_heap = NULL;
-	unsigned int num_check = 0;
-	/* bus_t bus_file = {NULL, NULL, NULL, 0};*/
+	char *content;
+	FILE *file;
+	size_t size = 0;
+	ssize_t read_line = 1;
+	stack_t *stack = NULL;
+	unsigned int counter = 0;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	file_two = fopen(argv[1], "r");
-	bus_file.file_check = file_two;
-	if (!file_two)
+	file = fopen(argv[1], "r");
+	bus_file.file_check = file;
+	if (!file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (get_input > 0)
+	while (read_line > 0)
 	{
-		info = NULL;
-		get_input = getline(&info, &size_check, file_two);
-		bus_file.information = info;
-		num_check++;
-		if (get_input > 0)
+		content = NULL;
+		read_line = getline(&content, &size, file);
+		bus_file.information = content;
+		counter++;
+		if (read_line > 0)
 		{
-			execute(info, &stack_heap, num_check, file_two);
+			execute(content, &stack, counter, file);
 		}
-		free(info);
+		free(content);
 	}
-	free_stack(stack_heap);
-	fclose(file_two);
+	free_stack(stack);
+	fclose(file);
 return (0);
 }
 
