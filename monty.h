@@ -33,12 +33,12 @@ typedef struct stack_s
  */
 typedef struct bus_s
 {
-	char *argue;
-	FILE *file_check;
-	char *information;
-	int pattern;
+	char *arg;
+	FILE *file;
+	char *content;
+	int lifi;
 }  bus_t;
-extern bus_t bus_file;
+extern bus_t bus;
 /**
  * struct instruction_s – operation code for the function
  * @opcode: operation code to be executed 
