@@ -42,7 +42,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		}
 		initial++;
 	}
-	if (op && array_check[i].opcode == NULL)
+	if (op && array_check[initial].opcode == NULL)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
